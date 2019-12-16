@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>提交订单-多益商城</title>
+    <link rel="icon" href="https://shop.duoyi.com/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="../css/pay.css">
+    <link rel="stylesheet" href="../lib/layui/css/layui.css">
+</head>
+
+<body>
+    <!-- 头部 -->
+    <header class="header"></header>
+    <!-- 主体 -->
+    <section class="main">
+        <div class="cart-table w">
+            <div class="title">
+                <a href="../index.html">
+                    ⬅回到首页
+                </a>
+            </div>
+            <div class="head">
+                <div class="tab active"><span></span>我的购物车</div>
+                <div class="tab active"><span></span>提交订单</div>
+                <div class="tab"><span></span>支付</div>
+            </div>
+            <div class="address">
+                <div class="address-top">
+                    <h4>填写收货地址<span class="tips">（请填写正确的收货地址，发货后将无法修改）</span></h4>
+                    <div class="address-list">
+                        <!-- <div class="item">
+                            <div class="item-left">
+                                <i class="seclect active"></i>
+                                <span class="add-name"></span>
+                                <span class="place"></span>
+                                <span class="tel"></span>
+                                <span class="default-select active">默认</span>
+                            </div>
+                            <div class="item-right">
+                                <span class="edit">编辑</span>
+                                <span class="del">删除</span>
+                            </div>
+                        </div> -->
+                    </div>
+                    <div class="setAddress">
+                        <i class="symbol"></i>
+                        新增收货地址
+                    </div>
+                </div>
+                <div class="address-bottom">
+                    <h4>快递信息</h4>
+                    <p>配送方：圆通快递<span>默认使用圆通快递配送，个别商品会使用顺丰快递配送</span></p>
+                    <p>在订单支付成功后1-3个工作日内发货（节假日顺延）</p>
+                </div>
+            </div>
+            <div class="goods-info">
+                <div class="title">确定商品信息</div>
+                <div class="top-bar">
+                    <ul>
+                        <li class="bar-02">商品信息</li>
+                        <li class="bar-03">单价(元)</li>
+                        <li class="bar-04">数量</li>
+                        <li class="bar-05">小计</li>
+                    </ul>
+                </div>
+                <div class="goods-list">
+                    <!-- <ul>
+                        <li class="goods">
+                            <div class="left">
+                                <img src=${goods_img}>
+                            </div>
+                            <div class="right">
+                                <h4 class="goods-name sl">${goods_name}</h4>
+                                <p class="desc">${goods_desc}</p>
+                            </div>
+                        </li>
+                        <li class="prices">${goods_price}</li>
+                        <li class="numbers" data_id="${goods_id}">
+                        </li>
+                        <li class="total">${(Number(goods_price) * Number(goods_count)).toFixed(2)}</li>
+                    </ul> -->
+                </div>
+                <div class="coupon-box">
+                    <p class="coupon-tip"><span class="label">优惠券<i class="toggle-icon"></i></span>
+                        <span class="empty">暂无可用</span></p>
+                </div>
+                <div class="balance cl">
+                    <div class="balanceContent">
+                        <div class="cart-detail">
+                            共计<span class="goods-total"></span>
+                            件商品，合计总额
+                            <span class="price-total"></span>
+                        </div>
+                        <div class="coupon-discount">
+
+                            优惠立减
+                            <span>-￥<span class="favourable"></span></span>
+                        </div>
+                        <div class="must-pay">
+                            应付总额
+                            <span></span>
+                        </div>
+                        <div class="option">
+                            <input type="button" class="go-pay" value="提交订单">
+                        </div>
+                        <div class="agreement">
+                            <i class="active"></i>
+                            我已阅读并同意
+                            <a href="https://shop.duoyi.com/kf/help#15" target="_blank">《多益商城服务协议》</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- 地址 -->
+    <div class="div">
+        <div id="address-news">
+            <div class="add-title">
+                <p>收货地址</p>
+                <span>×</span>
+            </div>
+            <div class="address-info cl">
+                <div class="content">
+                    <div class="container">
+                        <label class="add-name">
+                            <input id="username" class="username" type="text" maxlength="10" placeholder="收货人姓名"
+                                autocomplete="off">
+                        </label>
+                    </div>
+                    <div class="container">
+                        <label class="add-phone">
+                            <input class="phone" id="phone" type="text" maxlength="11" placeholder="手机号码"
+                                autocomplete="off">
+                        </label>
+                    </div>
+                    <p class="check check-tel">请输入正确的手机号码</p>
+                    <div id="sjld">
+                        <div class="add-select" id="province">
+                            <span class="show">请选择省份</span>
+                            <ul class="select-prov">
+
+                            </ul>
+                        </div>
+                        <div class="add-select" id="city">
+                            <span class="show">请选择城市</span>
+                            <ul class="select-city">
+
+                            </ul>
+                        </div>
+                        <div class="add-select" id="area">
+                            <span class="show">请选择区域</span>
+                            <ul class="select-area">
+
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="container">
+                        <label class="street">
+                            <input id="street" type="text" maxlength="50" placeholder="街道地址" autocomplete="off">
+                        </label>
+                    </div>
+                    <p class="default">
+                        <i></i>
+                        设为默认收货地址
+                    </p>
+                </div>
+                <div class="button">
+                    <button id="sure" data-click="1">确定</button>
+                    <button id="cancel">取消</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 尾部 -->
+    <div id="footer"></div>
+</body>
+<script src="../lib/layui/layui.js"></script>
+<script src="../lib/jquery-1.11.3.js"></script>
+<script src="../js/cookie.js"></script>
+<script src="../js/header.js"></script>
+<script src="../js/pay.js"></script>
+
+</html>
