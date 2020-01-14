@@ -1,0 +1,57 @@
+.login {
+  height: 100vh;
+  min-height: 500px;
+  background: url("../../../assets/images/login-bg.jpg") no-repeat;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+
+  .login-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 50px;
+
+    .login-header-logo {
+      color: #ffffff;
+      font-size: 26px;
+    }
+
+    .login-header-href {
+      a:hover {
+        color: #dddddd;
+      }
+    }
+
+    a {
+      color: #ffffff;
+    }
+  }
+
+  .login-content {
+    position: relative;
+
+    .outbox {
+      padding-left: 20px;
+      padding-right: 20px;
+      width: 340px;
+      height: 250px;
+      position: absolute;
+      right: 100px;
+      top: 100px;
+      background-color: rgba($color: #000000, $alpha: 0.5);
+      .title {
+        height: 40px;
+        line-height: 40px;
+        text-indent: 5px;
+        font-size: 24px;
+        font-weight: 500;
+        color: #fff;
+      }
+      .Box{
+        margin-top: 20px;
+      }
+    }
+  }
+
+}

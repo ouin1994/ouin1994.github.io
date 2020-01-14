@@ -1,0 +1,14 @@
+.content-row{
+    padding-left: 10px;
+    width: 100%;
+    .content-card{
+        padding-bottom: 10px;
+        .backlog{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+    }
+
+}
