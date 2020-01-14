@@ -1,7 +1,7 @@
 
 import axios from "axios";
 import { message } from "antd"
-const baseURL = 'https://47.105.83.238:1993/'
+const baseURL = 'https://ook.life:1993/'
 let token = "";
 axios.defaults.baseURL = baseURL;
 axios.defaults.headers.common['token'] = token;   // req.headers.token 
