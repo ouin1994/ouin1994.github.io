@@ -1,5 +1,5 @@
 import immutable from "immutable";
-const baseURL = "http://47.105.83.238:1993";
+const baseURL = "https://47.105.83.238:1993";
 const defaultState = immutable.fromJS({
     pic: require("@/assets/images/Pikachu.jpg"),
 })
